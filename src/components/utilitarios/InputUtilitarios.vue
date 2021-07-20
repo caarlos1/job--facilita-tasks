@@ -29,15 +29,15 @@ export default {
   margin-bottom 10px
   font-weight 600
   font-size 14px
-  color var(--cor-borda-input)
+  color var(--cor-label-input)
 
 .input__input
   height 55px
   width 100%
   margin-top 8px
-  color var(--cor-borda-input)
+  color var(--cor-label-input)
   background var(--cor-background)
-  border 2px solid #BFDAEB
+  border 2px solid var(--cor-borda-input)
   box-sizing border-box
   border-radius 5px
   text-indent 20px
