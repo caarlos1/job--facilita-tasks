@@ -2,11 +2,11 @@
   <div class="cabecalho">
     <img
       class="cabecalho__logo"
-      src="../../assets/img/logo.svg"
+      src="@/assets/img/logo.svg"
       alt="FacilitaTasks"
     />
     <h1 class="cabecalho__titulo"><span>Facilita</span>Tasks</h1>
-    <h2 class="cabecalho__sub">Gestão de tarefas pessoais</h2>
+    <h2 class="cabecalho__sub">Gestão de tarefas pessoais.</h2>
   </div>
 </template>
 
