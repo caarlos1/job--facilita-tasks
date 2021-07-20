@@ -6,6 +6,7 @@
         :tarefasPendentes="2"
       />
       <painel-to-do-list-pesquisa />
+      <painel-to-do-list-tarefas />
     </div>
   </div>
 </template>
@@ -13,8 +14,13 @@
 <script>
 import PainelToDoListCabecalho from "./PainelToDoListCabecalho.vue";
 import PainelToDoListPesquisa from "./PainelToDoListPesquisa.vue";
+import PainelToDoListTarefas from "./PainelToDoListTarefas.vue";
 export default {
-  components: { PainelToDoListCabecalho, PainelToDoListPesquisa },
+  components: {
+    PainelToDoListCabecalho,
+    PainelToDoListPesquisa,
+    PainelToDoListTarefas,
+  },
 };
 </script>
 
