@@ -3,32 +3,43 @@
     <h2 class="cabecalho__titulo">Minhas Tarefas</h2>
     <p class="cabecalho__sub">
       Olá <span>{{ usuario }}</span>
-      <template v-if="tp > 0"
-        >, você tem
-        <span class="sublinhado">{{ tp }} tarefa{{ plural(tp) }}</span
-        ><span> </span> pendente{{ plural(tp) }}.</template
-      ><template v-else
-        >, nada de tarefas...
-        <span><a href="#">Adicionar uma tarefa!</a></span></template
-      >
+
+      <template v-if="numTarefas > 0">
+        , você tem
+        <span class="sublinhado">
+          {{ numTarefas }} tarefa{{ plural(numTarefas) }}
+        </span>
+        <span> </span>
+        pendente{{ plural(numTarefas) }}.
+      </template>
+
+      <template v-else>
+        , nada de tarefas...
+        <span>
+          <a href="#">Adicionar uma tarefa!</a>
+        </span>
+      </template>
     </p>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   props: {
     usuario: String,
     tarefasPendentes: Number,
   },
+
   methods: {
-    plural(valor) {
-      return valor > 1 ? "s" : "";
-    },
+    plural: (valor) => (valor > 1 ? "s" : ""),
   },
+
   computed: {
-    tp() {
-      return this.tarefasPendentes;
+    ...mapGetters("toDoList", ["numeroDeTarefasPendentes"]),
+
+    numTarefas() {
+      return this.numeroDeTarefasPendentes;
     },
   },
 };
