@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <div class="menu__logo">
-      <painel-logo titulo="FacilitaTasks" url="/painel" />
+      <menu-de-navegacao-logo titulo="FacilitaTasks" url="/painel" />
     </div>
     <div class="menu__acoes">
       <painel-menu-acoes />
@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import PainelLogo from "./PainelLogo.vue";
+import MenuDeNavegacaoLogo from "./MenuDeNavegacaoLogo.vue";
 import PainelMenuAcoes from "./PainelMenuAcoes.vue";
 
 export default {
-  components: { PainelLogo, PainelMenuAcoes },
+  components: { MenuDeNavegacaoLogo, PainelMenuAcoes },
 };
 </script>
 

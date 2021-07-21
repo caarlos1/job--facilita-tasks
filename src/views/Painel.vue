@@ -1,7 +1,7 @@
 <template>
   <div class="container__painel">
     <div class="coluna coluna__menu fundo--cor-principal">
-      <painel-menu-principal />
+      <menu-de-navegacao />
     </div>
 
     <div class="coluna__barra">
@@ -16,14 +16,14 @@
 
 <script>
 import PainelBarraTopo from "../components/painel/PainelBarraTopo.vue";
-import PainelMenuPrincipal from "../components/painel/PainelMenuPrincipal.vue";
+import MenuDeNavegacao from "../components/MenuDeNavegacao/MenuDeNavegacao.vue";
 import PainelFerramentas from "../components/painel/PainelFerramentas.vue";
 
 export default {
   name: "Painel_Principal",
   components: {
     PainelBarraTopo,
-    PainelMenuPrincipal,
+    MenuDeNavegacao,
     PainelFerramentas,
   },
 };
