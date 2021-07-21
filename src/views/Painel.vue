@@ -9,7 +9,7 @@
     </div>
 
     <div class="coluna coluna__painel">
-      <painel-ferramentas />
+      <painel />
     </div>
   </div>
 </template>
@@ -17,14 +17,14 @@
 <script>
 import NavbarUsuario from "../components/NavbarUsuario/NavbarUsuario.vue";
 import MenuDeNavegacao from "../components/MenuDeNavegacao/MenuDeNavegacao.vue";
-import PainelFerramentas from "../components/painel/PainelFerramentas.vue";
+import Painel from "../components/Painel/Painel.vue";
 
 export default {
   name: "Painel_Principal",
   components: {
     NavbarUsuario,
     MenuDeNavegacao,
-    PainelFerramentas,
+    Painel,
   },
 };
 </script>
