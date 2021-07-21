@@ -3,12 +3,12 @@
     <h3 class="lista__titulo">Categorias</h3>
     <ul class="lista__ul">
       <li class="ativo">
-        <a href="/painel" class="lista__link">
+        <a href="/tarefas" class="lista__link">
           <div class="lista__texto">Todas</div>
         </a>
       </li>
       <li>
-        <a href="/painel/urgentes" class="lista__link">
+        <a href="/tarefas/urgentes" class="lista__link">
           <div class="lista__texto">Urgentes</div>
           <div
             v-if="numeroTarefasUrgentes > 0"
@@ -19,7 +19,7 @@
         </a>
       </li>
       <li>
-        <a href="/painel/importantes" class="lista__link">
+        <a href="/tarefas/importantes" class="lista__link">
           <div class="lista__texto">Importantes</div>
           <div
             v-if="numeroTarefasImportantes > 0"
@@ -30,12 +30,12 @@
         </a>
       </li>
       <li>
-        <a href="/painel/outras" class="lista__link">
+        <a href="/tarefas/outras" class="lista__link">
           <div class="lista__texto">Outras</div>
         </a>
       </li>
       <li>
-        <a href="/painel/finalizadas" class="lista__link">
+        <a href="/tarefas/finalizadas" class="lista__link">
           <div class="lista__texto">Finalizadas</div>
         </a>
       </li>

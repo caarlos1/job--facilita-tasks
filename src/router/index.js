@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Acesso from "../views/Acesso.vue";
-import Painel from "../views/Painel.vue";
+import Tarefas from "../views/Tarefas.vue";
 
 Vue.use(VueRouter);
 
@@ -12,13 +12,13 @@ const routes = [
     component: Acesso,
   },
   {
-    path: "/painel",
-    name: "Painel Principal",
-    component: Painel,
+    path: "/tarefas",
+    name: "Tarefas",
+    component: Tarefas,
   },
   {
-    path: "/painel/:tipo",
-    component: Painel,
+    path: "/tarefas/:tipo",
+    component: Tarefas,
   },
 ];
 

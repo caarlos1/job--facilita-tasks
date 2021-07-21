@@ -1,10 +1,10 @@
 <template>
   <ul class="acoes__lista">
-    <li class="ativo">
+    <li>
       <i class="far fa-chart-bar icones"></i> <br />
       Deashboard
     </li>
-    <li>
+    <li class="ativo">
       <i class="far fa-check-circle icones"></i> <br />
       Tarefas
     </li>

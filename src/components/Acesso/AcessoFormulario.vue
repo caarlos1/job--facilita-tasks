@@ -1,5 +1,5 @@
 <template>
-  <form action="/painel">
+  <form action="/tarefas">
     <h3 class="formulario__titulo">{{ titulo }}</h3>
     <utilitarios-input descricao="Nome de usuário ou e-mail:" nome="usuario" />
     <utilitarios-input descricao="Senha:" nome="senha" tipo="password" />
