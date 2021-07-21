@@ -1,16 +1,16 @@
 <template>
   <div class="menu-secundario">
     <div class="menu-secundario__bloco">
-      <painel-menu-lista />
+      <menu-secundario-lista />
     </div>
   </div>
 </template>
 
 <script>
-import PainelMenuLista from "./PainelMenuLista.vue";
+import MenuSecundarioLista from "./MenuSecundarioLista.vue";
 
 export default {
-  components: { PainelMenuLista },
+  components: { MenuSecundarioLista },
 };
 </script>
 

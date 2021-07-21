@@ -1,15 +1,15 @@
 <template>
   <div class="painel__ferramentas">
-    <painel-menu-secundario />
+    <menu-secundario />
     <to-do-list />
   </div>
 </template>
 
 <script>
-import PainelMenuSecundario from "./PainelMenuSecundario.vue";
+import MenuSecundario from "../MenuSecundario/MenuSecundario.vue";
 import ToDoList from "../ToDoList/ToDoList.vue";
 export default {
-  components: { PainelMenuSecundario, ToDoList },
+  components: { MenuSecundario, ToDoList },
 };
 </script>
 
