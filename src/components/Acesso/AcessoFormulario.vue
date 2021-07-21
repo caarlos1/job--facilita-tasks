@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import UtilitariosBotao from "../utilitarios/UtilitariosBotao.vue";
-import UtilitariosInput from "../utilitarios/UtilitariosInput.vue";
+import UtilitariosBotao from "../Utilitarios/UtilitariosBotao.vue";
+import UtilitariosInput from "../Utilitarios/UtilitariosInput.vue";
 
 export default {
   components: { UtilitariosInput, UtilitariosBotao },
