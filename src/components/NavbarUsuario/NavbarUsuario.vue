@@ -3,7 +3,7 @@
     <div>
       <!-- Espaço útil da barra -->
     </div>
-    <painel-usuario
+    <utilitarios-usuario
       fotoUsuario="https://gravatar.com/avatar/9a82ba52769cbc22951a7cf516124307?s=50"
       nomeUsuario="Carlos Roberto da Silva Júnior"
       cargoUsuario="Desenvolvedor Front-End"
@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import PainelUsuario from "./PainelUsuario.vue";
+import UtilitariosUsuario from "../Utilitarios/UtilitariosUsuario.vue";
 export default {
-  components: { PainelUsuario },
+  components: { UtilitariosUsuario },
 };
 </script>
 

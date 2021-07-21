@@ -5,7 +5,7 @@
     </div>
 
     <div class="coluna__barra">
-      <painel-barra-topo />
+      <navbar-usuario />
     </div>
 
     <div class="coluna coluna__painel">
@@ -15,14 +15,14 @@
 </template>
 
 <script>
-import PainelBarraTopo from "../components/painel/PainelBarraTopo.vue";
+import NavbarUsuario from "../components/NavbarUsuario/NavbarUsuario.vue";
 import MenuDeNavegacao from "../components/MenuDeNavegacao/MenuDeNavegacao.vue";
 import PainelFerramentas from "../components/painel/PainelFerramentas.vue";
 
 export default {
   name: "Painel_Principal",
   components: {
-    PainelBarraTopo,
+    NavbarUsuario,
     MenuDeNavegacao,
     PainelFerramentas,
   },
