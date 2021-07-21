@@ -1,5 +1,5 @@
 <template>
-  <div class="barra__conteudo">
+  <div class="navbar__conteudo">
     <div>
       <!-- Espaço útil da barra -->
     </div>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.barra__conteudo
+.navbar__conteudo
   display grid;
   grid-template-columns auto 300px
   box-sizing border-box
