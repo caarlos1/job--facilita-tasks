@@ -16,6 +16,10 @@ const routes = [
     name: "Painel Principal",
     component: Painel,
   },
+  {
+    path: "/painel/:tipo",
+    component: Painel,
+  },
 ];
 
 const router = new VueRouter({
