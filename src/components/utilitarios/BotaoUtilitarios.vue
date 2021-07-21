@@ -39,7 +39,7 @@ export default {
   margin 20px 0px
 
 .botao
-  transition 0.1s linear
+  transition var(--transicao-padrao)
   padding 18px
   border none
   border-radius 5px
