@@ -1,34 +1,66 @@
 <template>
   <div class="lista">
-    <h3 class="lista__titulo">{{ tituloLinks }}</h3>
+    <h3 class="lista__titulo">Categorias</h3>
     <ul class="lista__ul">
-      <li
-        v-for="item in listaDeLinks"
-        :key="item.texto"
-        :class="{ ativo: item.ativo }"
-      >
-        <a :href="item.url" class="lista__link"
-          ><div class="lista__texto">
-            {{ item.texto }}
-          </div>
+      <li class="ativo">
+        <a href="/painel" class="lista__link">
+          <div class="lista__texto">Todas</div>
+        </a>
+      </li>
+      <li>
+        <a href="/painel/urgentes" class="lista__link">
+          <div class="lista__texto">Urgentes</div>
           <div
-            class="lista__quantidade"
-            :class="item.cor || 'primaria'"
-            v-if="item.quantidade > 0"
+            v-if="numeroTarefasUrgentes > 0"
+            class="lista__quantidade perigo"
           >
-            {{ item.quantidade }}
-          </div></a
-        >
+            {{ numeroTarefasUrgentes }}
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/painel/importantes" class="lista__link">
+          <div class="lista__texto">Importantes</div>
+          <div
+            v-if="numeroTarefasImportantes > 0"
+            class="lista__quantidade alerta"
+          >
+            {{ numeroTarefasImportantes }}
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/painel/outras" class="lista__link">
+          <div class="lista__texto">Outras</div>
+        </a>
+      </li>
+      <li>
+        <a href="/painel/finalizadas" class="lista__link">
+          <div class="lista__texto">Finalizadas</div>
+        </a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
-  props: {
-    tituloLinks: String,
-    listaDeLinks: Array,
+  computed: {
+    ...mapGetters("toDoList", [
+      "listarTarefasUrgentes",
+      "listarTarefasImportantes",
+    ]),
+
+    numeroTarefasUrgentes() {
+      const tarefas = this.listarTarefasUrgentes;
+      return tarefas.length;
+    },
+
+    numeroTarefasImportantes() {
+      const tarefas = this.listarTarefasImportantes;
+      return tarefas.length;
+    },
   },
 };
 </script>
@@ -60,6 +92,7 @@ export default {
   background-size 8px
   background-repeat no-repeat
   background-position center left
+  transition var(--transicao-padrao)
 
 .lista__link:hover
 .ativo .lista__link
