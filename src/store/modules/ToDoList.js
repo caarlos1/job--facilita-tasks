@@ -1,4 +1,7 @@
-import { salvarTarefasCache, limparTarefasCache } from "../../util";
+import * as getters from "./ToDoListGetters";
+import * as actions from "./ToDoListActions";
+import * as mutations from "./ToDoListMutations";
+
 export default {
   namespaced: true,
   state: {
@@ -35,60 +38,7 @@ export default {
       },
     ],
   },
-
-  getters: {
-    listaDeTarefas(state) {
-      return state.tarefas;
-    },
-
-    listaDeTarefasFinalizadas(state) {
-      return state.tarefas.filter((tarefa) => !tarefa.finalizada);
-    },
-
-    listaDeTarefasOutras(state) {
-      return state.tarefas.filter(
-        (tarefa) => tarefa.importancia.tipo == 1 && !tarefa.finalizada
-      );
-    },
-
-    listarTarefasImportantes(state) {
-      return state.tarefas.filter(
-        (tarefa) => tarefa.importancia.tipo == 2 && !tarefa.finalizada
-      );
-    },
-
-    listarTarefasUrgentes(state) {
-      return state.tarefas.filter(
-        (tarefa) => tarefa.importancia.tipo == 3 && !tarefa.finalizada
-      );
-    },
-  },
-
-  mutations: {
-    mudarEstadoTarefaMutation(state, id) {
-      const tarefa = state.tarefas.find((tarefa) => tarefa.id == id);
-      tarefa.finalizada = !tarefa.finalizada;
-      salvarTarefasCache(state);
-    },
-
-    atualizarTarefasMutation(state, dados) {
-      state.tarefas = JSON.parse(dados);
-      salvarTarefasCache(state);
-    },
-  },
-
-  actions: {
-    mudarEstadoTarefa(context, estado) {
-      context.commit("mudarEstadoTarefaMutation", estado);
-    },
-
-    atualizarTarefas(context, tarefas) {
-      context.commit("atualizarTarefasMutation", tarefas);
-    },
-
-    limparTarefas(context) {
-      context.commit("atualizarTarefasMutation", "[]");
-      limparTarefasCache();
-    },
-  },
+  getters,
+  mutations,
+  actions,
 };
