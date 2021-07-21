@@ -1,54 +1,40 @@
 <template>
-  <div class="container__painel">
-    <div class="coluna coluna__menu fundo--cor-principal">
+  <template-painel>
+    <template v-slot:navegacao>
       <menu-de-navegacao />
-    </div>
+    </template>
 
-    <div class="coluna__barra">
+    <template v-slot:navegacao-secundaria>
+      <menu-secundario />
+    </template>
+
+    <template v-slot:navbar>
       <navbar-usuario />
-    </div>
+    </template>
 
-    <div class="coluna coluna__painel">
-      <painel />
-    </div>
-  </div>
+    <!-- Conteúdo da Página -->
+    <template v-slot:area-util>
+      <to-do-list />
+    </template>
+
+    <!-- fim -->
+  </template-painel>
 </template>
 
 <script>
-import NavbarUsuario from "../components/NavbarUsuario/NavbarUsuario.vue";
 import MenuDeNavegacao from "../components/MenuDeNavegacao/MenuDeNavegacao.vue";
-import Painel from "../components/Painel/Painel.vue";
+import MenuSecundario from "../components/MenuSecundario/MenuSecundario.vue";
+import NavbarUsuario from "../components/NavbarUsuario/NavbarUsuario.vue";
+import TemplatePainel from "../components/Templates/TemplatePainel.vue";
+import ToDoList from "../components/ToDoList/ToDoList.vue";
 
 export default {
-  name: "Painel_Principal",
   components: {
-    NavbarUsuario,
     MenuDeNavegacao,
-    Painel,
+    NavbarUsuario,
+    MenuSecundario,
+    ToDoList,
+    TemplatePainel,
   },
 };
 </script>
-
-<style lang="stylus" scoped>
-.container__painel
-  display grid;
-  grid-template-columns 106px 20fr
-  grid-auto-rows minmax(auto, 100vh)
-  background var(--cor-background-painel)
-
-.coluna__painel
-  display grid;
-  width 100%
-  grid-template-columns 1fr
-  grid-auto-columns minmax(auto 100%)
-  align-self start
-  padding 0
-
-.coluna__menu
-  padding 0
-  z-index 1000
-
-.coluna__barra
-  position absolute
-  width 100%
-</style>
