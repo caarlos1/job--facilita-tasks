@@ -1,18 +1,18 @@
 <template>
   <form action="/tarefas">
     <h3 class="formulario__titulo">{{ titulo }}</h3>
-    <utilitarios-input descricao="Nome de usuário ou e-mail:" nome="usuario" />
-    <utilitarios-input descricao="Senha:" nome="senha" tipo="password" />
-    <utilitarios-botao :botao="botao" :responsivo="true" cor="sucesso--btn" />
+    <util-input descricao="Nome de usuário ou e-mail:" nome="usuario" />
+    <util-input descricao="Senha:" nome="senha" tipo="password" />
+    <util-botao :botao="botao" :responsivo="true" cor="sucesso--btn" />
   </form>
 </template>
 
 <script>
-import UtilitariosBotao from "../Utilitarios/UtilitariosBotao.vue";
-import UtilitariosInput from "../Utilitarios/UtilitariosInput.vue";
+import UtilBotao from "../Utilitarios/UtilBotao.vue";
+import UtilInput from "../Utilitarios/UtilInput.vue";
 
 export default {
-  components: { UtilitariosInput, UtilitariosBotao },
+  components: { UtilInput, UtilBotao },
   props: {
     titulo: String,
     botao: String,
