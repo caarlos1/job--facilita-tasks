@@ -15,15 +15,15 @@ import "./assets/css/style.styl";
 
 import "@fortawesome/fontawesome-free/css/all.css";
 
+import { TarefasCache } from "./store/modules/ToDoListClasses";
 import { mapActions } from "vuex";
-import { buscarTarefasCache, limparTarefasCache } from "./util";
 
 export default {
   mounted() {
-    const tarefas = buscarTarefasCache();
+    const tarefas = TarefasCache.buscarTarefasCache();
     if (tarefas) {
       if (tarefas.length > 0) this.atualizarTarefas(tarefas);
-      else limparTarefasCache();
+      else TarefasCache.limparTarefasCache();
     }
   },
   methods: {
