@@ -1,18 +1,18 @@
 <template>
   <form action="/painel">
     <h3 class="formulario__titulo">{{ titulo }}</h3>
-    <input-utilitarios descricao="Nome de usuário ou e-mail:" nome="usuario" />
-    <input-utilitarios descricao="Senha:" nome="senha" tipo="password" />
-    <botao-utilitarios :botao="botao" :responsivo="true" cor="sucesso--btn" />
+    <utilitarios-input descricao="Nome de usuário ou e-mail:" nome="usuario" />
+    <utilitarios-input descricao="Senha:" nome="senha" tipo="password" />
+    <utilitarios-botao :botao="botao" :responsivo="true" cor="sucesso--btn" />
   </form>
 </template>
 
 <script>
-import BotaoUtilitarios from "../utilitarios/BotaoUtilitarios.vue";
-import InputUtilitarios from "../utilitarios/InputUtilitarios.vue";
+import UtilitariosBotao from "../utilitarios/UtilitariosBotao.vue";
+import UtilitariosInput from "../utilitarios/UtilitariosInput.vue";
 
 export default {
-  components: { InputUtilitarios, BotaoUtilitarios },
+  components: { UtilitariosInput, UtilitariosBotao },
   props: {
     titulo: String,
     botao: String,
