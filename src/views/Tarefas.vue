@@ -5,7 +5,7 @@
     </template>
 
     <template v-slot:navegacao-secundaria>
-      <menu-secundario />
+      <menu-secundario-tarefas />
     </template>
 
     <template v-slot:navbar>
@@ -23,7 +23,7 @@
 
 <script>
 import MenuDeNavegacao from "../components/MenuDeNavegacao/MenuDeNavegacao.vue";
-import MenuSecundario from "../components/MenuSecundario/MenuSecundario.vue";
+import MenuSecundarioTarefas from "../components/MenuSecundario/MenuSecundarioTarefas.vue";
 import NavbarUsuario from "../components/NavbarUsuario/NavbarUsuario.vue";
 import TemplatePainel from "../components/Templates/TemplatePainel.vue";
 import ToDoList from "../components/ToDoList/ToDoList.vue";
@@ -32,9 +32,9 @@ export default {
   components: {
     MenuDeNavegacao,
     NavbarUsuario,
-    MenuSecundario,
     ToDoList,
     TemplatePainel,
+    MenuSecundarioTarefas,
   },
 };
 </script>
