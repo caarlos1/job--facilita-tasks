@@ -17,11 +17,10 @@
 </template>
 
 <script>
-import AcessoCabecalho from "../components/acesso/AcessoCabecalho.vue";
-import AcessoFormulario from "../components/acesso/AcessoFormulario.vue";
+import AcessoCabecalho from "../components/Acesso/AcessoCabecalho.vue";
+import AcessoFormulario from "../components/Acesso/AcessoFormulario.vue";
 
 export default {
-  name: "Pagina_de_Acesso",
   components: { AcessoCabecalho, AcessoFormulario },
 };
 </script>
