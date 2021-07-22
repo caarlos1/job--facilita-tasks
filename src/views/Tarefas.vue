@@ -17,6 +17,10 @@
       <to-do-list />
     </template>
 
+    <template v-slot:modal>
+      <modal-to-do-list />
+    </template>
+
     <!-- fim -->
   </template-painel>
 </template>
@@ -24,6 +28,7 @@
 <script>
 import MenuDeNavegacao from "../components/MenuDeNavegacao/MenuDeNavegacao.vue";
 import MenuSecundarioTarefas from "../components/MenuSecundario/MenuSecundarioTarefas.vue";
+import ModalToDoList from "../components/ModalBox/ModalToDoList.vue";
 import NavbarUsuario from "../components/NavbarUsuario/NavbarUsuario.vue";
 import TemplatePainel from "../components/Templates/TemplatePainel.vue";
 import ToDoList from "../components/ToDoList/ToDoList.vue";
@@ -35,6 +40,7 @@ export default {
     ToDoList,
     TemplatePainel,
     MenuSecundarioTarefas,
+    ModalToDoList,
   },
 };
 </script>

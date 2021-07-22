@@ -1,24 +1,35 @@
 <template>
-  <div class="container__painel">
-    <div class="coluna coluna__menu fundo--cor-principal">
-      <slot name="navegacao"></slot>
+  <div class="template__painel">
+    <div v-if="modalBoxEstaAtiva" class="container__modal">
+      <slot name="modal"></slot>
     </div>
 
-    <div class="navbar__area">
-      <slot name="navbar"></slot>
-    </div>
+    <div class="container__painel">
+      <div class="coluna coluna__menu fundo--cor-principal">
+        <slot name="navegacao"></slot>
+      </div>
 
-    <div class="coluna coluna__painel">
-      <div class="painel__area-util">
-        <slot name="navegacao-secundaria"></slot>
-        <slot name="area-util"></slot>
+      <div class="navbar__area">
+        <slot name="navbar"></slot>
+      </div>
+
+      <div class="coluna coluna__painel">
+        <div class="painel__area-util">
+          <slot name="navegacao-secundaria"></slot>
+          <slot name="area-util"></slot>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters("modalBox", ["modalBoxEstaAtiva"]),
+  },
+};
 </script>
 
 <style lang="stylus" scoped>
