@@ -12,10 +12,11 @@ import "normalize.css";
 import "./assets/css/root.styl";
 import "./assets/css/fonts.styl";
 import "./assets/css/style.styl";
+import "./assets/css/util.styl";
 
 import "@fortawesome/fontawesome-free/css/all.css";
 
-import { TarefasCache } from "./store/modules/ToDoListClasses";
+import { TarefasCache } from "./store/modules/ToDoList/ToDoListClasses";
 import { mapActions } from "vuex";
 
 export default {
@@ -23,11 +24,11 @@ export default {
     const tarefas = TarefasCache.buscarTarefasCache();
     if (tarefas) {
       if (tarefas.length > 0) this.atualizarTarefas(tarefas);
-      else TarefasCache.limparTarefasCache();
-    }
+      else this.popularTarefas();
+    } else this.popularTarefas();
   },
   methods: {
-    ...mapActions("toDoList", ["atualizarTarefas"]),
+    ...mapActions("toDoList", ["atualizarTarefas", "popularTarefas"]),
   },
 };
 </script>
