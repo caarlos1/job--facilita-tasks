@@ -1,5 +1,5 @@
 <template>
-  <button :type="tipo" class="botao" :class="classesDinamicas">
+  <button :type="tipo || 'submit'" class="botao" :class="classesDinamicas">
     {{ botao || "Enviar" }}
   </button>
 </template>
