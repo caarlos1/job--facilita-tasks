@@ -5,6 +5,19 @@
         <div class="lista__texto">Todas</div>
       </a>
     </li>
+
+    <li id="link-tarefas__urgentes">
+      <a href="/tarefas/pendentes" class="lista__link">
+        <div class="lista__texto">Pendentes</div>
+        <div
+          v-if="numeroDeTarefasPendentes > 0"
+          class="lista__quantidade primaria"
+        >
+          {{ numeroDeTarefasPendentes }}
+        </div>
+      </a>
+    </li>
+
     <li id="link-tarefas__urgentes">
       <a href="/tarefas/urgentes" class="lista__link">
         <div class="lista__texto">Urgentes</div>
@@ -16,6 +29,7 @@
         </div>
       </a>
     </li>
+
     <li id="link-tarefas__importantes">
       <a href="/tarefas/importantes" class="lista__link">
         <div class="lista__texto">Importantes</div>
@@ -27,6 +41,7 @@
         </div>
       </a>
     </li>
+
     <li id="link-tarefas__outras">
       <a href="/tarefas/outras" class="lista__link">
         <div class="lista__texto">Outras</div>
@@ -48,6 +63,7 @@ export default {
     ...mapGetters("toDoList", [
       "numeroDeTarefasUrgentes",
       "numeroDeTarefasImportantes",
+      "numeroDeTarefasPendentes",
     ]),
   },
 };

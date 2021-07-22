@@ -36,6 +36,8 @@ export class UtilTarefas {
         return objeto.listaDeTarefasOutras;
       case "finalizadas":
         return objeto.listaDeTarefasFinalizadas;
+      case "pendentes":
+        return objeto.listaDeTarefasPendentes;
       default:
         return objeto.listaDeTarefas;
     }

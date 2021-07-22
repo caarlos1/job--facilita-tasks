@@ -34,6 +34,7 @@ export default {
       "listaDeTarefasUrgentes",
       "listaDeTarefasOutras",
       "listaDeTarefasFinalizadas",
+      "listaDeTarefasPendentes",
     ]),
 
     buscarTipoDeTarefasPelaURL() {
