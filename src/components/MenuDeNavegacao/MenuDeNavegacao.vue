@@ -21,4 +21,7 @@ export default {
 <style lang="stylus" scoped>
 .menu
   display grid
+
+.menu__logo
+  max-height 106px
 </style>
