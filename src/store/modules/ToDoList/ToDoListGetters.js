@@ -17,6 +17,8 @@ export const listaDeTarefasFinalizadas = (state) =>
 export const listaDeTarefasPendentes = (state) =>
   Tarefas.filtrar(state, buscarPor.Pendentes);
 
+export const nuemeroTotalDeTarefas = (state) => state.tarefas.length;
+
 export const numeroDeTarefasImportantes = (state) =>
   Tarefas.contar(state, buscarPor.Importantes);
 
