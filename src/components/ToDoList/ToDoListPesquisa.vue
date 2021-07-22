@@ -45,6 +45,7 @@ export default {
     border: 2px solid var(--cor-borda-input);
     border-left none
     background var(--cor-background-painel)
+    cursor pointer
   i
     font-size 25px
     color: var(--cor-borda-input)
