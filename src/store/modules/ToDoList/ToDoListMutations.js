@@ -1,5 +1,5 @@
-import { Util } from "../../util";
 import { Tarefas, TarefasCache } from "./ToDoListClasses";
+import { Util } from "../../../util";
 
 export const mudarEstadoTarefaMutation = (state, id) => {
   const tarefa = Tarefas.buscar(state, id);
