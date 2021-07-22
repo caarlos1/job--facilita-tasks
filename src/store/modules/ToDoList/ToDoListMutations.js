@@ -11,3 +11,8 @@ export const atualizarTarefasMutation = (state, dados) => {
   state.tarefas = Util.toJSON(dados);
   TarefasCache.salvarTarefasCache(state);
 };
+
+export const popularTarefasMutation = (state, dados) => {
+  state.tarefas = dados;
+  TarefasCache.salvarTarefasCache(state);
+};
