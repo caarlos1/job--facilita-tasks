@@ -1,4 +1,4 @@
-import { TarefasCache } from "./ToDoListClasses";
+import { TarefasCache, Tarefas } from "./ToDoListClasses";
 import { tarefas } from "./ToDoListDados";
 
 export const mudarEstadoTarefa = (context, estado) =>
@@ -10,6 +10,11 @@ export const atualizarTarefas = (context, tarefas) =>
 export const limparTarefas = (context) => {
   context.commit("atualizarTarefasMutation", "[]");
   TarefasCache.limparTarefasCache();
+};
+
+export const adicionarTarefa = (context, tarefa) => {
+  tarefa = Tarefas.formatarParaSalvar(context, tarefa);
+  context.commit("adicionarTarefaMutation", tarefa);
 };
 
 export const popularTarefas = (context) => {

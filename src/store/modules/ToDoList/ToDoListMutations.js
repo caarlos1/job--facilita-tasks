@@ -3,12 +3,17 @@ import { Util } from "../../../util";
 
 export const mudarEstadoTarefaMutation = (state, id) => {
   const tarefa = Tarefas.buscar(state, id);
-  tarefa.finalizada = !tarefa.finalizada;
+  tarefa.concluida = !tarefa.concluida;
   TarefasCache.salvarTarefasCache(state);
 };
 
 export const atualizarTarefasMutation = (state, dados) => {
   state.tarefas = Util.toJSON(dados);
+  TarefasCache.salvarTarefasCache(state);
+};
+
+export const adicionarTarefaMutation = (state, tarefa) => {
+  state.tarefas.push(tarefa);
   TarefasCache.salvarTarefasCache(state);
 };
 
