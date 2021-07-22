@@ -1,5 +1,8 @@
 <template>
   <div class="todolist">
+    <div class="botao__adicionar">
+      <to-do-list-botao-modal />
+    </div>
     <div class="todolist__bloco">
       <to-do-list-cabecalho usuario="Carlos Roberto" :tarefasPendentes="2" />
       <to-do-list-pesquisa />
@@ -9,6 +12,7 @@
 </template>
 
 <script>
+import ToDoListBotaoModal from "./ToDoListBotaoModal.vue";
 import ToDoListCabecalho from "./ToDoListCabecalho.vue";
 import ToDoListPesquisa from "./ToDoListPesquisa.vue";
 import ToDoListTarefas from "./ToDoListTarefas.vue";
@@ -17,6 +21,7 @@ export default {
     ToDoListCabecalho,
     ToDoListPesquisa,
     ToDoListTarefas,
+    ToDoListBotaoModal,
   },
 };
 </script>
@@ -30,4 +35,9 @@ export default {
 .todolist__bloco
   align-self center
   grid-column-start 2
+
+.botao__adicionar
+  position absolute
+  right 28px
+  bottom 28px
 </style>
