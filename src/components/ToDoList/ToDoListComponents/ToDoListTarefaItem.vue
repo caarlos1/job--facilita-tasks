@@ -150,6 +150,6 @@ export default {
 .pop__area
   z-index 1011
   position absolute
-  right -47px
+  right 12px
   top 10px
 </style>

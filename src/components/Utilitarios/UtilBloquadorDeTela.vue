@@ -24,5 +24,5 @@ export default {
   top 0
   right 0
   background black
-  opacity 0.1
+  opacity 0.05
 </style>
