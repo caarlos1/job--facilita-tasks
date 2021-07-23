@@ -153,4 +153,16 @@ export default {
   position absolute
   right 12px
   top 10px
+
+@media (max-width: 800px)
+  .tarefa__bloco
+    display grid;
+    padding 10px
+    grid-template-columns auto auto 30% 10%
+  .tarefa__tipo
+    text-align right
+
+  .pop__area
+    right 0px
+    top 0px
 </style>

@@ -15,7 +15,7 @@
     </div>
 
     <!-- Botão testes -->
-    <a href="#" @click="limparTarefas">Apagar Tarefas</a>
+    <!-- <a href="#" @click="limparTarefas">Apagar Tarefas</a> -->
   </div>
 </template>
 
@@ -89,7 +89,7 @@ export default {
 
 <style lang="stylus" scoped>
 .tarefa__lista
-  max-height 435px
+  max-height 45vh
   overflow-y: auto;
   margin-bottom 20px
 
@@ -98,6 +98,7 @@ export default {
 
 .tarefa__lista::-webkit-scrollbar-track
   background transparent
+
 .tarefa__lista::-webkit-scrollbar-thumb
   background-color var(--cor-background)
   border-radius 20px
@@ -106,4 +107,10 @@ export default {
 .tarefa__item
   margin 10px 0px
   transition var(--transicao-padrao)
+
+@media (max-width: 500px)
+  .tarefa__lista
+    max-height 50vh
+    overflow-y auto
+    margin-bottom 0
 </style>

@@ -15,14 +15,15 @@ export default {
 <style lang="stylus" scoped>
 .bloqueador__area
   position relative
+  display block
 
 .bloqueador__tela
   z-index 1010
-  position absolute
-  height 100vh
-  width 100vw
-  top 0
-  right 0
+  position fixed
+  height 100%
+  width 100%
+  top 0px
+  right 0px
   background black
   opacity 0.05
 </style>

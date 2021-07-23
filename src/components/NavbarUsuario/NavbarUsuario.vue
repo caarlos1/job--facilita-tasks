@@ -28,4 +28,8 @@ export default {
   margin-bottom: 10px
   background var(--cor-background)
   box-shadow var(--sombra-padrao)
+
+@media (max-width: 1100px)
+  .navbar__conteudo
+    display block
 </style>

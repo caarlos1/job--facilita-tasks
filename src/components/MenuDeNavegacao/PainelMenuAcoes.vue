@@ -44,4 +44,19 @@ export default {};
 .ativo
   background var(--cor-principal-hover)
   color var(--cor-texto-claro)
+
+@media (max-width: 1100px)
+  .acoes__lista
+    display grid
+    grid-template-columns 30% 40% 30%
+
+@media (max-width: 500px)
+  .acoes__lista
+    display block
+
+    li
+      padding 20px
+
+    .icones
+        font-size 20px
 </style>

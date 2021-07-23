@@ -31,6 +31,8 @@ export default {
 
 <style lang="stylus" scoped>
 .botao__adicionar
+  box-sizing border-box
+  z-index 1099
   height 77px
   width 77px
   border-radius 50%
@@ -45,4 +47,11 @@ export default {
 
 .botao__adicionar:disabled
   opacity 0.5
+
+@media (max-width: 1100px)
+  .botao__adicionar
+    height 30px
+    width 30px
+    font-size 20px
+    padding 6px
 </style>

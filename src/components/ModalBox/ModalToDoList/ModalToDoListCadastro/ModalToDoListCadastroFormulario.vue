@@ -128,4 +128,19 @@ export default {
 
 .modal__botao
   margin 0 0 0 5px
+
+@media (max-width: 800px)
+  .modal__acoes
+    display grid
+    grid-template-columns auto
+    padding-top 15px
+
+  .modal__botoes
+    text-align left
+
+  .modal__botao
+    margin-top 30px
+
+  .input__textarea
+      height 110px
 </style>

@@ -17,4 +17,5 @@ export default {
   font-size 18px
   color var( --cor-borda-input )
   cursor pointer
+  text-align right
 </style>

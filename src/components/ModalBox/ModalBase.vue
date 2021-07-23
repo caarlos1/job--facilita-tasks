@@ -16,11 +16,11 @@ export default {};
 .modal
   display grid
   grid-auto-rows minmax(auto, 100vh)
-  position absolute
+  position fixed
   top 0
   z-index 1001
-  height 100vh
-  width 100vw
+  height 100%
+  width 100%
   background-color rgba(70, 93, 118, 0.6);
 
 .modal__area
@@ -33,4 +33,9 @@ export default {};
   background var(--cor-background)
   border-radius 8px
   padding 40px 40px
+
+@media (max-width: 800px)
+  .modal__area
+    display block
+    padding 10px 20px
 </style>

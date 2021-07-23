@@ -39,6 +39,7 @@ export default {
 
 .pesquisa__formulario
   display grid
+  width 100%
   grid-template-columns auto 60px
 
   input
@@ -73,4 +74,8 @@ export default {
 
   :active i
     color: var(--cor-principal-hover)
+
+@media (max-width: 800px)
+  .pesquisa__formulario
+    grid-template-columns: 80% 20%;
 </style>

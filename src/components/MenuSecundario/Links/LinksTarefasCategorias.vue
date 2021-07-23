@@ -120,4 +120,14 @@ export default {
   text-align center
   color: var(--cor-texto-claro)
   float left
+
+@media (max-width: 1100px)
+  .lista__ul
+    display block
+    max-width auto
+    overflow-y hidden
+    overflow-x: scroll;
+
+  .lista__ul li
+    display inline-block
 </style>

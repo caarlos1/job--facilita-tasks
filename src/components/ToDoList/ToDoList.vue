@@ -31,6 +31,7 @@ export default {
   display grid;
   grid-template-columns auto 650px auto
   grid-auto-rows minmax(auto, 100vh)
+  position relative
 
 .todolist__bloco
   margin-top 25vh
@@ -41,4 +42,20 @@ export default {
   position absolute
   right 28px
   bottom 28px
+
+//Codigos para resolver a responsividade
+//...
+@media (max-width: 1100px)
+  .todolist
+    display block
+    height 100vh
+
+  .todolist__bloco
+    margin-top 30px
+    padding 10vh 30px 30px 30px
+
+  .botao__adicionar
+    top 9.5vh
+    left 220px
+    position absolute
 </style>

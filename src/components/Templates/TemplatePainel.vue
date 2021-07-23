@@ -33,8 +33,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.template__painel
+  box-sizing border-box
+
 .container__painel
   display grid;
+  box-sizing border-box
   grid-template-columns 106px 20fr
   grid-auto-rows minmax(auto, 100vh)
   background var(--cor-background-painel)
@@ -59,4 +63,15 @@ export default {
   display grid;
   grid-template-columns 250px auto
   grid-auto-rows minmax(auto, 100vh)
+
+//
+//...
+@media (max-width: 1100px)
+  .container__painel
+  .painel__area-util
+  .coluna__painel
+    display block
+
+  .navbar__area
+    position relative
 </style>

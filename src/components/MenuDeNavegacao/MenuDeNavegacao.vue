@@ -24,4 +24,15 @@ export default {
 
 .menu__logo
   max-height 106px
+
+@media (max-width: 1100px)
+  .menu
+    display block
+    grid-template-columns 25fr 75fr
+    padding 20px
+
+  .menu__logo
+    max-height 200px
+    margin 0
+    padding 0
 </style>
