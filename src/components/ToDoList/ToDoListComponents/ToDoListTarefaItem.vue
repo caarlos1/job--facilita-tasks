@@ -72,7 +72,6 @@ export default {
 <style lang="stylus" scoped>
 .tarefa__bloco
   display grid;
-  width 100%
   grid-template-columns 35px auto 110px 20px
   background var(--cor-background)
   box-shadow var(--sombra-padrao)
