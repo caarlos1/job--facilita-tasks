@@ -16,6 +16,7 @@ import AcessoFormulario from "../components/Acesso/AcessoFormulario.vue";
 import TemplateAcesso from "../components/Templates/TemplateAcesso.vue";
 
 export default {
+  titulo: "Acesso - Facilita Tasks",
   components: { TemplateAcesso, AcessoCabecalho, AcessoFormulario },
 };
 </script>

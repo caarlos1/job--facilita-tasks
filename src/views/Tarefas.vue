@@ -34,6 +34,7 @@ import TemplatePainel from "../components/Templates/TemplatePainel.vue";
 import ToDoList from "../components/ToDoList/ToDoList.vue";
 
 export default {
+  titulo: "Tarefas - Facilita Tasks",
   components: {
     MenuDeNavegacao,
     NavbarUsuario,
