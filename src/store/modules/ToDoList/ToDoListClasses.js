@@ -11,8 +11,7 @@ export class Tarefas {
   static contar = (s, bool) => s.tarefas.filter(bool).length;
   static buscar = (s, id) => s.tarefas.find((tarefa) => tarefa.id == id);
 
-  static formatarParaSalvar = (context, tarefa) => {
-    const { getters } = context;
+  static formatarParaSalvar = ({ getters }, tarefa) => {
     tarefa.id = getters.nuemeroTotalDeTarefas + 1;
     tarefa.concluida = false;
     return tarefa;
