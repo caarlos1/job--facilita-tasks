@@ -10,6 +10,8 @@ export class UtilTarefas {
         return "alerta";
       case 3:
         return "perigo";
+      case 500:
+        return "excluida";
       default:
         return "primaria";
     }
@@ -21,6 +23,8 @@ export class UtilTarefas {
         return "Importante";
       case 3:
         return "Urgente";
+      case 500:
+        return "Excluida";
       default:
         return "Normal";
     }
@@ -38,6 +42,8 @@ export class UtilTarefas {
         return objeto.listaDeTarefasFinalizadas;
       case "pendentes":
         return objeto.listaDeTarefasPendentes;
+      case "excluidas":
+        return objeto.listaDeTarefasExcluidas;
       default:
         return objeto.listaDeTarefas;
     }
