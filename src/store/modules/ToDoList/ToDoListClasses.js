@@ -1,9 +1,14 @@
 export class buscarPor {
-  static Importantes = (t) => t.tipo.valor == 2 && !t.concluida;
-  static Urgentes = (t) => t.tipo.valor == 3 && !t.concluida;
-  static Pendentes = (t) => t.concluida == false;
-  static Finalizadas = (t) => t.concluida == true;
-  static Outras = (t) => (t.tipo.valor == 1 || undefined) && !t.concluida;
+  static Geral = (t) => t.tipo.valor != 500;
+  static Importantes = (t) =>
+    t.tipo.valor == 2 && !t.concluida && t.tipo.valor != 500;
+  static Urgentes = (t) =>
+    t.tipo.valor == 3 && !t.concluida && t.tipo.valor != 500;
+  static Pendentes = (t) => t.concluida == false && t.tipo.valor != 500;
+  static Finalizadas = (t) => t.concluida == true && t.tipo.valor != 500;
+  static Outras = (t) =>
+    (t.tipo.valor == 1 || undefined) && !t.concluida && t.tipo.valor != 500;
+  static Excluidas = (t) => t.tipo.valor === 500;
 }
 
 export class Tarefas {
@@ -15,6 +20,13 @@ export class Tarefas {
     tarefa.id = getters.nuemeroTotalDeTarefas + 1;
     tarefa.concluida = false;
     return tarefa;
+  };
+
+  static mesclar = (a, b) => {
+    a.titulo = b.titulo;
+    a.descricao = b.descricao;
+    a.concluida = b.concluida;
+    a.tipo = b.tipo;
   };
 }
 

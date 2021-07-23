@@ -42,11 +42,21 @@ export const tarefas = [
   {
     id: 5,
     titulo: "Comprar café!!!",
-    descricao: "Fazer bem feito e bonito.",
+    descricao: "Bem forte para não dormir programando.",
     concluida: false,
     tipo: {
       valor: 3,
       tag: "Urgente",
+    },
+  },
+  {
+    id: 6,
+    titulo: "Ir no banheiro...",
+    descricao: "Acho que essa tarefa é muito pessoal, melhor deixar apagada.",
+    concluida: true,
+    tipo: {
+      valor: 500,
+      tag: "Excluida",
     },
   },
 ];

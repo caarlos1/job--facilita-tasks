@@ -17,6 +17,19 @@ export const adicionarTarefaMutation = (state, tarefa) => {
   TarefasCache.salvarTarefasCache(state);
 };
 
+export const excluirTarefaMutation = (state, id) => {
+  const tarefa = Tarefas.buscar(state, id);
+  // Nada é excluido, apenas é defino um tipo diferente.
+  tarefa.tipo = { tag: "Excluida", valor: 500 };
+  TarefasCache.salvarTarefasCache(state);
+};
+
+export const recuperarTarefaMutation = (state, id) => {
+  const tarefa = Tarefas.buscar(state, id);
+  tarefa.tipo = { tag: "Normal", valor: 1 };
+  TarefasCache.salvarTarefasCache(state);
+};
+
 export const popularTarefasMutation = (state, dados) => {
   state.tarefas = dados;
   TarefasCache.salvarTarefasCache(state);
@@ -24,12 +37,6 @@ export const popularTarefasMutation = (state, dados) => {
 
 export const atualizarTarefaMutation = (state, tarefaEditada) => {
   let tarefa = Tarefas.buscar(state, tarefaEditada.id);
-  try {
-    tarefa = Object.entries(tarefaEditada);
-  } catch (err) {
-    console.log(
-      `Algo de errado aconteceu com essa tarefa: ${tarefa.titulo}. Erro: ${err}`
-    );
-  }
+  Tarefas.mesclar(tarefa, tarefaEditada);
   TarefasCache.salvarTarefasCache(state);
 };

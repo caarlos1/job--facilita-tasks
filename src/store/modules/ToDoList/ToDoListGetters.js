@@ -1,6 +1,7 @@
 import { buscarPor, Tarefas } from "./ToDoListClasses";
 
-export const listaDeTarefas = (state) => state.tarefas;
+export const listaDeTarefas = (state) =>
+  Tarefas.filtrar(state, buscarPor.Geral);
 
 export const listaDeTarefasImportantes = (state) =>
   Tarefas.filtrar(state, buscarPor.Importantes);
@@ -16,6 +17,9 @@ export const listaDeTarefasFinalizadas = (state) =>
 
 export const listaDeTarefasPendentes = (state) =>
   Tarefas.filtrar(state, buscarPor.Pendentes);
+
+export const listaDeTarefasExcluidas = (state) =>
+  Tarefas.filtrar(state, buscarPor.Excluidas);
 
 export const nuemeroTotalDeTarefas = (state) => state.tarefas.length;
 

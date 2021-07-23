@@ -26,3 +26,9 @@ export const obterTarefaPorId = async ({ state }, id) =>
 
 export const atualizarTarefa = ({ commit }, tarefa) =>
   commit("atualizarTarefaMutation", tarefa);
+
+export const excluirTarefa = ({ commit }, id) =>
+  commit("excluirTarefaMutation", id);
+
+export const recuperarTarefa = ({ commit }, id) =>
+  commit("recuperarTarefaMutation", id);
