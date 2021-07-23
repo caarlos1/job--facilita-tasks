@@ -1,5 +1,6 @@
 <template>
   <form class="modal__formulario" @submit.prevent="adicionarTarefaLista">
+    <input type="hidden" id="tipo" v-model="tarefa.id" />
     <!-- ... -->
     <div class="input__bloco">
       <label class="input__label" for="descricao-tarefa">Título:</label>
@@ -21,7 +22,7 @@
     <div class="modal__acoes">
       <div class="modal__radio">
         <input
-          v-model="tarefa.valor"
+          v-model="tarefa.tipo.valor"
           class="radio__input"
           id="valor-valor"
           type="radio"
@@ -30,7 +31,7 @@
         <label class="radio__label" for="valorChoice1">Importante</label>
 
         <input
-          v-model="tarefa.valor"
+          v-model="tarefa.tipo.valor"
           class="radio__input"
           id="valor-valor"
           type="radio"
@@ -43,7 +44,7 @@
         <util-botao
           class="modal__botao"
           cor="sucesso--btn"
-          botao="Adicionar"
+          :botao="botao"
           tipo="submit"
         />
       </div>
@@ -53,37 +54,55 @@
 </template>
 
 <script>
-import { mapActions, mapMutations } from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 import UtilBotao from "../../Utilitarios/UtilBotao.vue";
 import { UtilTarefas } from "../../../util";
 
 export default {
   components: { UtilBotao },
-
+  async mounted() {
+    const id = this.obterIdModalBox;
+    if (id) {
+      this.tarefa = await this.obterTarefaPorId(id);
+      this.botao = "Editar Tarefa";
+    }
+  },
   data() {
     return {
+      botao: "Adicionar",
       tarefa: {
+        id: null,
         titulo: "",
         descricao: "",
-        valor: 1,
+        tipo: {
+          valor: 1,
+        },
       },
     };
   },
+  computed: {
+    ...mapGetters("modalBox", ["obterIdModalBox"]),
+  },
   methods: {
-    ...mapActions("toDoList", ["adicionarTarefa"]),
+    ...mapActions("toDoList", [
+      "adicionarTarefa",
+      "atualizarTarefa",
+      "obterTarefaPorId",
+    ]),
     ...mapMutations("modalBox", ["desativarModalBox"]),
 
     adicionarTarefaLista() {
       let tarefa = { ...this.tarefa };
-      let valor = tarefa.valor;
-      delete tarefa.valor;
+      let valor = tarefa.tipo.valor;
 
       tarefa.tipo = {
         valor,
         tag: UtilTarefas.definirTagPorValor(valor),
       };
 
-      this.adicionarTarefa(tarefa);
+      if (tarefa.id) this.atualizarTarefa(tarefa);
+      else this.adicionarTarefa(tarefa);
+
       this.desativarModalBox();
     },
   },
