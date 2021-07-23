@@ -20,3 +20,9 @@ export const adicionarTarefa = (context, tarefa) => {
 export const popularTarefas = (context) => {
   context.commit("popularTarefasMutation", tarefas);
 };
+
+export const obterTarefaPorId = async ({ state }, id) =>
+  Tarefas.buscar(state, id);
+
+export const atualizarTarefa = ({ commit }, tarefa) =>
+  commit("atualizarTarefaMutation", tarefa);

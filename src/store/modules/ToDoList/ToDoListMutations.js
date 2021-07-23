@@ -21,3 +21,15 @@ export const popularTarefasMutation = (state, dados) => {
   state.tarefas = dados;
   TarefasCache.salvarTarefasCache(state);
 };
+
+export const atualizarTarefaMutation = (state, tarefaEditada) => {
+  let tarefa = Tarefas.buscar(state, tarefaEditada.id);
+  try {
+    tarefa = Object.entries(tarefaEditada);
+  } catch (err) {
+    console.log(
+      `Algo de errado aconteceu com essa tarefa: ${tarefa.titulo}. Erro: ${err}`
+    );
+  }
+  TarefasCache.salvarTarefasCache(state);
+};
