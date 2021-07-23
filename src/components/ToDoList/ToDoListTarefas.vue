@@ -46,6 +46,21 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.tarefa__lista
+  max-height 435px
+  overflow-y: auto;
+  margin-bottom 20px
+
+.tarefa__lista::-webkit-scrollbar
+  width 20px
+
+.tarefa__lista::-webkit-scrollbar-track
+  background transparent
+.tarefa__lista::-webkit-scrollbar-thumb
+  background-color var(--cor-background)
+  border-radius 20px
+  border 7px solid var(--cor-background-painel)
+
 .tarefa__item
   margin 10px 0px
   transition var(--transicao-padrao)
