@@ -5,7 +5,7 @@
     </div>
     <div class="todolist__bloco">
       <to-do-list-cabecalho usuario="Carlos Roberto" />
-      <to-do-list-pesquisa />
+      <to-do-list-busca />
       <to-do-list-tarefas />
     </div>
   </div>
@@ -14,12 +14,12 @@
 <script>
 import ToDoListBotaoModal from "./ToDoListComponents/ToDoListBotaoModal.vue";
 import ToDoListCabecalho from "./ToDoListComponents/ToDoListCabecalho.vue";
-import ToDoListPesquisa from "./ToDoListPesquisa.vue";
+import ToDoListBusca from "./ToDoListBusca.vue";
 import ToDoListTarefas from "./ToDoListTarefas.vue";
 export default {
   components: {
     ToDoListCabecalho,
-    ToDoListPesquisa,
+    ToDoListBusca,
     ToDoListTarefas,
     ToDoListBotaoModal,
   },
@@ -33,7 +33,8 @@ export default {
   grid-auto-rows minmax(auto, 100vh)
 
 .todolist__bloco
-  align-self center
+  margin-top 25vh
+  // align-self center
   grid-column-start 2
 
 .botao__adicionar

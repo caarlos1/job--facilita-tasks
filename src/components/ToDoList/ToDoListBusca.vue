@@ -1,8 +1,15 @@
 <template>
-  <div class="todolist__pesquisa">
+  <div class="todolist__busca">
     <div class="pesquisa__bloco">
       <form class="pesquisa__formulario">
-        <input type="text" placeholder="Buscar Tarefas" name="buscar-tarefas" />
+        <input
+          v-model="busca"
+          autocomplete="off"
+          type="text"
+          placeholder="Buscar Tarefas"
+          name="buscar-tarefas"
+          @input="buscar()"
+        />
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
     </div>
@@ -10,8 +17,19 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
-  props: {},
+  data() {
+    return {
+      busca: "",
+    };
+  },
+  methods: {
+    ...mapMutations("busca", ["atualizarBusca"]),
+    buscar() {
+      this.atualizarBusca(this.busca);
+    },
+  },
 };
 </script>
 
