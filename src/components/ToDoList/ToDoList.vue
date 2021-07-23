@@ -4,7 +4,7 @@
       <to-do-list-botao-modal />
     </div>
     <div class="todolist__bloco">
-      <to-do-list-cabecalho usuario="Carlos Roberto" :tarefasPendentes="2" />
+      <to-do-list-cabecalho usuario="Carlos Roberto" />
       <to-do-list-pesquisa />
       <to-do-list-tarefas />
     </div>
@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import ToDoListBotaoModal from "./ToDoListBotaoModal.vue";
-import ToDoListCabecalho from "./ToDoListCabecalho.vue";
+import ToDoListBotaoModal from "./ToDoListComponents/ToDoListBotaoModal.vue";
+import ToDoListCabecalho from "./ToDoListComponents/ToDoListCabecalho.vue";
 import ToDoListPesquisa from "./ToDoListPesquisa.vue";
 import ToDoListTarefas from "./ToDoListTarefas.vue";
 export default {

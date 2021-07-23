@@ -14,7 +14,7 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import { Util, UtilTarefas } from "../../util";
-import ToDoListTarefaItem from "./ToDoListTarefaItem.vue";
+import ToDoListTarefaItem from "./ToDoListComponents/ToDoListTarefaItem.vue";
 
 export default {
   components: { ToDoListTarefaItem },
