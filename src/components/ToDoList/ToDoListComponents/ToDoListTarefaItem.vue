@@ -10,7 +10,7 @@
           @click="mudarEstadoTarefa(tarefa.id)"
         ></button>
 
-        <h4 class="tarefa__titulo">
+        <h4 class="tarefa__titulo" @click="abrirDescricao(tarefa.id)">
           {{ tarefa.titulo }}
         </h4>
 
@@ -21,6 +21,12 @@
         </div>
 
         <util-tree-dots :funcao="abrirPopMenuAcoes" />
+
+        <div></div>
+
+        <div v-if="tarefaAberta == tarefa.id" class="tarefa__descricao">
+          {{ tarefa.descricao || "Essa tarefa não possui descrição..." }}
+        </div>
       </div>
 
       <to-do-list-tarefa-item-menu-acoes
@@ -54,16 +60,23 @@ export default {
   },
   props: {
     tarefa: Object,
+    tarefaAberta: Number,
   },
   methods: {
     ...mapActions("toDoList", ["mudarEstadoTarefa", "limparTarefas"]),
     classPorValor: (valor) => UtilTarefas.definirClassPorValor(valor),
     verificarEstadoTarefa: (tarefa) => tarefa.concluida,
+
     abrirPopMenuAcoes() {
       this.popMenuAtivo = true;
     },
+
     fecharPopMenuAcoes() {
       this.popMenuAtivo = false;
+    },
+
+    abrirDescricao(id) {
+      this.$emit("abrirDescricaoTarefa", id);
     },
   },
 };
@@ -85,6 +98,10 @@ export default {
   font-weight 600
   font-size 15px
   line-height 16px
+  cursor pointer
+
+.tarefa__titulo:hover
+    color var(--cor-principal)
 
 .tarefa__estado
   height 35px
@@ -123,6 +140,12 @@ export default {
 
 .tarefa__escopo
   position relative
+
+.tarefa__descricao{
+  padding 0px 13px
+  font-size: 15px;
+  line-height: 16px;
+}
 
 .pop__area
   z-index 1011
