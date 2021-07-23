@@ -75,6 +75,7 @@ export default {
       "listaDeTarefasOutras",
       "listaDeTarefasFinalizadas",
       "listaDeTarefasPendentes",
+      "listaDeTarefasExcluidas",
     ]),
     ...mapGetters("busca", ["obterValorDeBusca"]),
 

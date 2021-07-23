@@ -31,6 +31,7 @@
 
       <to-do-list-tarefa-item-menu-acoes
         :id="tarefa.id"
+        :tipo="tarefa.tipo"
         class="pop__area"
         v-if="popMenuAtivo"
         v-on:meFecha="fecharPopMenuAcoes()"

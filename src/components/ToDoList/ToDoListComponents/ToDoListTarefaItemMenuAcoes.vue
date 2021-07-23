@@ -1,9 +1,12 @@
 <template>
   <div class="menu-acoes__pop">
     <div class="pop__bloco">
-      <ul>
+      <ul v-if="tipo.valor != 500">
         <li @click="abirEditorTarefa(id)">Editar</li>
-        <li @click="excluirTarefa()">Excluir</li>
+        <li @click="excluirTarefaPorId(id)">Excluir</li>
+      </ul>
+      <ul v-else>
+        <li @click="recuperarTarefaPorId(id)">Recuperar</li>
       </ul>
     </div>
     <util-tree-dots class="pop__botao" :funcao="fecharMenuPop" />
@@ -17,9 +20,15 @@ export default {
   components: { UtilTreeDots },
   props: {
     id: Number,
+    tipo: Object,
   },
   methods: {
-    ...mapMutations("modalBox", ["ativarModalBox", "definirTituloModalBox"]),
+    ...mapMutations("modalBox", [
+      "ativarModalBox",
+      "definirTituloModalBox",
+      "definirComponenteModal",
+      "definirSubTituloModal",
+    ]),
 
     fecharMenuPop() {
       this.$emit("meFecha");
@@ -28,6 +37,26 @@ export default {
     abirEditorTarefa(id) {
       this.fecharMenuPop();
       this.definirTituloModalBox("Editar Tarefa");
+      this.definirComponenteModal("ModalToDoListCadastro");
+      this.ativarModalBox(id);
+    },
+
+    excluirTarefaPorId(id) {
+      this.fecharMenuPop();
+      this.definirTituloModalBox(
+        "Tem certeza que deseja <span class='cor-perigo'>excluir</span> essa tarefa?"
+      );
+      this.definirSubTituloModal("Essa ação não poderá ser desfeita.");
+      this.definirComponenteModal("ModalToDoListConfirmacao");
+      this.ativarModalBox(id);
+    },
+
+    recuperarTarefaPorId(id) {
+      this.definirTituloModalBox(
+        "Tem certeza que deseja <span class='cor-perigo'>recuperar</span> essa tarefa?"
+      );
+      this.definirSubTituloModal("Essa tarefa voltará para a lista.");
+      this.definirComponenteModal("ModalToDoListConfirmacao");
       this.ativarModalBox(id);
     },
   },
