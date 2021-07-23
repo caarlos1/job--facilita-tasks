@@ -5,7 +5,7 @@
       @click="abrirModalBoxAdicionarTarefas()"
       class="botao__adicionar"
     >
-      <span>+</span>
+      <span><i class="fas fa-plus"></i></span>
     </button>
   </div>
 </template>
@@ -32,8 +32,8 @@ export default {
   box-sizing border-box
   background #0ED984
   text-align center
-  padding-top 12.5px
-  font-size 55px
+  padding 22px
+  font-size 35px
   color: var(--cor-texto-claro)
   cursor pointer
   border none
