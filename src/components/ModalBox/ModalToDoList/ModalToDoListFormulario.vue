@@ -4,12 +4,18 @@
     <!-- ... -->
     <div class="input__bloco">
       <label class="input__label" for="descricao-tarefa">Título:</label>
-      <input class="input__input" type="text" v-model="tarefa.titulo" />
+      <input
+        required
+        class="input__input"
+        type="text"
+        v-model="tarefa.titulo"
+      />
     </div>
 
     <div class="input__bloco">
       <label class="input__label" for="descricao-tarefa">Descrição:</label>
       <textarea
+        required
         v-model="tarefa.descricao"
         class="input__base input__textarea"
         name="descricao-tarefa"
