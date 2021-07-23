@@ -3,12 +3,16 @@ export default {
   state: {
     ativa: false,
     titulo: "",
+    componente: "",
+    sub: "",
     id: null,
   },
   getters: {
     modalBoxEstaAtiva: (s) => s.ativa,
     obterTituloModalBox: (s) => s.titulo,
+    obterSubTituloModalBox: (s) => s.sub,
     obterIdModalBox: (s) => s.id,
+    obterComponenteModalAtivo: (s) => s.componente,
   },
   mutations: {
     ativarModalBox: (s, id) => {
@@ -19,8 +23,17 @@ export default {
     desativarModalBox: (s) => {
       s.ativa = false;
     },
+
     definirTituloModalBox: (s, titulo) => {
       s.titulo = titulo;
+    },
+
+    definirComponenteModal: (s, componente) => {
+      s.componente = componente;
+    },
+
+    definirSubTituloModal: (s, sub) => {
+      s.sub = sub;
     },
   },
 };
