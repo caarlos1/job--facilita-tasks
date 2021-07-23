@@ -61,15 +61,17 @@
 
 <script>
 import { mapActions, mapGetters, mapMutations } from "vuex";
-import UtilBotao from "../../Utilitarios/UtilBotao.vue";
-import { UtilTarefas } from "../../../util";
+import UtilBotao from "../../../Utilitarios/UtilBotao.vue";
+import { UtilTarefas } from "../../../../util";
 
 export default {
   components: { UtilBotao },
   async mounted() {
     const id = this.obterIdModalBox;
     if (id) {
-      this.tarefa = await this.obterTarefaPorId(id);
+      const tarefaOriginal = await this.obterTarefaPorId(id);
+      const clone = JSON.parse(JSON.stringify(tarefaOriginal));
+      this.tarefa = clone;
       this.botao = "Editar Tarefa";
     }
   },

@@ -23,7 +23,6 @@ export default {
 .modal__cabecalho
   display grid
   grid-template-columns auto 20px
-  grid-grid-auto-columns max-content
 
 .modal__titulo
   margin 0 0 25px 0
