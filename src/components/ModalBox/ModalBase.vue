@@ -25,12 +25,12 @@ export default {};
 
 .modal__area
   display grid
-  grid-template-columns auto 700px auto
+  grid-template-columns auto 620px auto
   align-self center
 
 .modal__bloco
   grid-column-start: 2;
   background var(--cor-background)
   border-radius 8px
-  padding 35px 40px
+  padding 40px 40px
 </style>
