@@ -86,7 +86,7 @@ export default {
   padding 8px 20px
   margin 0
   text-decoration none
-  background-image url('../../../assets/icon/arrow_normal.svg')
+  background-image url('../../../assets/icon/arrow.svg')
   background-size 8px
   background-repeat no-repeat
   background-position center left
@@ -95,7 +95,7 @@ export default {
 .lista__link:hover
 .ativo .lista__link
   color: var(--cor-principal)
-  background-image url('../../../assets/icon/arrow_destaque.svg')
+  background-image url('../../../assets/icon/arrow_check.svg')
 
 .lista__titulo
   margin-bottom 50px
