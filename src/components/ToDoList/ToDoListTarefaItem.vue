@@ -1,32 +1,57 @@
 <template>
-  <div
-    :class="{ 'tarefa--concluida': verificarEstadoTarefa(tarefa) }"
-    class="tarefa__bloco"
-  >
-    <button
-      class="tarefa__estado"
-      @click="mudarEstadoTarefa(tarefa.id)"
-    ></button>
+  <div>
+    <div class="tarefa__escopo">
+      <div
+        :class="{ 'tarefa--concluida': verificarEstadoTarefa(tarefa) }"
+        class="tarefa__bloco"
+      >
+        <button
+          class="tarefa__estado"
+          @click="mudarEstadoTarefa(tarefa.id)"
+        ></button>
 
-    <h4 class="tarefa__titulo">
-      {{ tarefa.titulo }}
-    </h4>
+        <h4 class="tarefa__titulo">
+          {{ tarefa.titulo }}
+        </h4>
 
-    <div class="tarefa__tipo">
-      <span class="tarefa__tags" :class="classPorValor(tarefa.tipo.valor)">
-        {{ tarefa.tipo.tag || "" }}
-      </span>
+        <div class="tarefa__tipo">
+          <span class="tarefa__tags" :class="classPorValor(tarefa.tipo.valor)">
+            {{ tarefa.tipo.tag || "" }}
+          </span>
+        </div>
+
+        <util-tree-dots :funcao="abrirPopMenuAcoes" />
+      </div>
+
+      <to-do-list-tarefa-item-menu-acoes
+        :id="tarefa.id"
+        class="pop__area"
+        v-if="popMenuAtivo"
+        v-on:meFecha="fecharPopMenuAcoes()"
+      />
     </div>
-
-    <i class="fas fa-ellipsis-v tarefa__acoes"></i>
+    <util-bloquador-de-tela v-if="popMenuAtivo" :fechar="fecharPopMenuAcoes" />
   </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
 import { UtilTarefas } from "../../util";
+import UtilBloquadorDeTela from "../Utilitarios/UtilBloquadorDeTela.vue";
+import UtilTreeDots from "../Utilitarios/UtilTreeDots.vue";
+import ToDoListTarefaItemMenuAcoes from "./ToDoListTarefaItemMenuAcoes.vue";
 
 export default {
+  components: {
+    ToDoListTarefaItemMenuAcoes,
+    UtilBloquadorDeTela,
+    UtilTreeDots,
+  },
+  data() {
+    return {
+      popMenuAtivo: false,
+    };
+  },
   props: {
     tarefa: Object,
   },
@@ -34,6 +59,12 @@ export default {
     ...mapActions("toDoList", ["mudarEstadoTarefa", "limparTarefas"]),
     classPorValor: (valor) => UtilTarefas.definirClassPorValor(valor),
     verificarEstadoTarefa: (tarefa) => tarefa.concluida,
+    abrirPopMenuAcoes() {
+      this.popMenuAtivo = true;
+    },
+    fecharPopMenuAcoes() {
+      this.popMenuAtivo = false;
+    },
   },
 };
 </script>
@@ -41,6 +72,7 @@ export default {
 <style lang="stylus" scoped>
 .tarefa__bloco
   display grid;
+  width 100%
   grid-template-columns 35px auto 110px 20px
   background var(--cor-background)
   box-shadow var(--sombra-padrao)
@@ -77,12 +109,6 @@ export default {
   align-self center
   text-align right
 
-.tarefa__acoes
-  padding 0px 0 0 20px
-  align-self center
-  font-size 18px
-  color var(--cor-borda-input)
-
 .tarefa--concluida
   transition var(--transicao-padrao)
   opacity 0.5
@@ -95,4 +121,13 @@ export default {
     background-repeat no-repeat
   .tarefa__titulo
     text-decoration line-through
+
+.tarefa__escopo
+  position relative
+
+.pop__area
+  z-index 1011
+  position absolute
+  right -47px
+  top 10px
 </style>
