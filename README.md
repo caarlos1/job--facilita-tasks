@@ -1,24 +1,29 @@
-# facilita-teste
+# facilita-tasks
 
-## Project setup
+Projeto desenvolvido para teste de seleção de vaga Front-End na empresa Facilita.
+
+Endereço: [facilita-tasks.pages.dev](https://facilita-tasks.pages.dev/)
+
+## Referência
+
+Referência para criação do projeto: [Clique aqui!](https://bitbucket.org/mundoon-dev/teste-front-end/src/master/)
+
+## Estatísticas
+[![wakatime](https://wakatime.com/badge/github/caarlos1/facilita-tasks.svg)](https://wakatime.com/badge/github/caarlos1/facilita-tasks)
+
+## Configuração de Projeto
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Visualização
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Compilação
 ```
 yarn build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Obrigado pela oportunidade! 😉
