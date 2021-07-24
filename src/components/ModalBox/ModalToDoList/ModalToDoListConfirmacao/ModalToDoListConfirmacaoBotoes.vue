@@ -31,4 +31,9 @@ export default {
 
 .confirmacao__botao
   margin 0px 5px
+
+@media (max-width: 500px)
+  .confirmacao__botao
+    width 70%
+    margin 5px 0
 </style>
