@@ -1,13 +1,13 @@
 <template>
   <ul class="lista__ul">
     <li id="link-tarefas__padrao">
-      <a href="/tarefas" class="lista__link">
+      <a href="/tarefas#todolist" class="lista__link">
         <div class="lista__texto">Todas</div>
       </a>
     </li>
 
     <li id="link-tarefas__urgentes">
-      <a href="/tarefas/pendentes" class="lista__link">
+      <a href="/tarefas/pendentes#todolist" class="lista__link">
         <div class="lista__texto">Pendentes</div>
         <div
           v-if="numeroDeTarefasPendentes > 0"
@@ -19,7 +19,7 @@
     </li>
 
     <li id="link-tarefas__urgentes">
-      <a href="/tarefas/urgentes" class="lista__link">
+      <a href="/tarefas/urgentes#todolist" class="lista__link">
         <div class="lista__texto">Urgentes</div>
         <div
           v-if="numeroDeTarefasUrgentes > 0"
@@ -31,7 +31,7 @@
     </li>
 
     <li id="link-tarefas__importantes">
-      <a href="/tarefas/importantes" class="lista__link">
+      <a href="/tarefas/importantes#todolist" class="lista__link">
         <div class="lista__texto">Importantes</div>
         <div
           v-if="numeroDeTarefasImportantes > 0"
@@ -43,12 +43,12 @@
     </li>
 
     <li id="link-tarefas__outras">
-      <a href="/tarefas/outras" class="lista__link">
+      <a href="/tarefas/outras#todolist" class="lista__link">
         <div class="lista__texto">Outras</div>
       </a>
     </li>
     <li id="link-tarefas__finalizadas">
-      <a href="/tarefas/finalizadas" class="lista__link">
+      <a href="/tarefas/finalizadas#todolist" class="lista__link">
         <div class="lista__texto">Finalizadas</div>
       </a>
     </li>
