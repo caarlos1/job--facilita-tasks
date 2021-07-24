@@ -124,10 +124,12 @@ export default {
 @media (max-width: 1100px)
   .lista__ul
     display block
-    max-width auto
-    overflow-y hidden
-    overflow-x: scroll;
 
   .lista__ul li
     display inline-block
+
+@media (max-width: 500px)
+  .lista__ul li
+    display block
+    width 100%
 </style>

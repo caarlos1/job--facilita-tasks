@@ -53,4 +53,8 @@ export default {
   font-size 12px;
   line-height 13px;
   color: var(--cor-principal)
+
+@media (max-width: 500px)
+  .usuario__foto
+    height 50px
 </style>

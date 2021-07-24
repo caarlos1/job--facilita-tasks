@@ -4,17 +4,17 @@
       <menu-de-navegacao-logo titulo="FacilitaTasks" url="/painel" />
     </div>
     <div class="menu__acoes">
-      <painel-menu-acoes />
+      <menu-de-navegacao-links />
     </div>
   </div>
 </template>
 
 <script>
 import MenuDeNavegacaoLogo from "./MenuDeNavegacaoLogo.vue";
-import PainelMenuAcoes from "./PainelMenuAcoes.vue";
+import MenuDeNavegacaoLinks from "./MenuDeNavegacaoLinks.vue";
 
 export default {
-  components: { MenuDeNavegacaoLogo, PainelMenuAcoes },
+  components: { MenuDeNavegacaoLogo, MenuDeNavegacaoLinks },
 };
 </script>
 
@@ -29,7 +29,7 @@ export default {
   .menu
     display block
     grid-template-columns 25fr 75fr
-    padding 20px
+    padding 30px
 
   .menu__logo
     max-height 200px

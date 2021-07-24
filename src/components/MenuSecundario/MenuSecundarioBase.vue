@@ -21,7 +21,7 @@
   align-self center
 
 .lista
-  padding 40px
+  padding 30px
   font-weight 600;
   font-size 15px;
   line-height 25px;
