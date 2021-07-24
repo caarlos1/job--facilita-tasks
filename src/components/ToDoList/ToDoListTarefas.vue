@@ -110,7 +110,7 @@ export default {
 
 @media (max-width: 500px)
   .tarefa__lista
-    max-height 50vh
+    max-height 80vh
     overflow-y auto
     margin-bottom 0
 </style>

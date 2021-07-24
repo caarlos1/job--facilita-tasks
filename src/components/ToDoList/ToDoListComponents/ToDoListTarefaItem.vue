@@ -158,7 +158,7 @@ export default {
   .tarefa__bloco
     display grid;
     padding 10px
-    grid-template-columns auto auto 30% 10%
+    grid-template-columns 35px auto 30% 10%
   .tarefa__tipo
     text-align right
 
